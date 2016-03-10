@@ -1,15 +1,15 @@
 {%
   set js_vendors = [
-    'jquery/index.js?v=2.1.3',
-    'fastclick/lib/fastclick.min.js?v=1.0.6',
-    'jquery_lazyload/jquery.lazyload.js?v=1.9.7',
-    'velocity/velocity.min.js',
-    'velocity/velocity.ui.min.js'
+    'jquery/2.1.3/jquery.min',
+    'fastclick/1.0.6/fastclick.min',
+    'jquery_lazyload/1.9.7/jquery.lazyload.min',
+    'velocity/1.2.2/velocity.min',
+    'velocity/1.2.2/velocity.ui.min'
   ]
 %}
 
 {% if theme.fancybox %}
-  {% set js_vendors[js_vendors.length] = 'fancybox/source/jquery.fancybox.pack.js' %}
+  {% set js_vendors[js_vendors.length] = 'fancybox/2.1.5/jquery.fancybox.pack' %}
 {% endif %}
 
 {# Reset `window.Promise` when it was not a function. #}
@@ -21,5 +21,5 @@
 </script>
 
 {% for vendor in js_vendors %}
-  <script type="text/javascript" src="{{ url_for(theme.vendors) }}/{{ vendor }}"></script>
+  <script type="text/javascript" src="http://cdn.staticfile.org/{{ vendor }}.js"></script>
 {% endfor %}
