@@ -21,5 +21,5 @@
 </script>
 
 {% for vendor in js_vendors %}
-  <script type="text/javascript" src="http://cdn.staticfile.org/{{ vendor }}.js"></script>
+  <script type="text/javascript" src="//cdn.staticfile.org/{{ vendor }}.js"></script>
 {% endfor %}
